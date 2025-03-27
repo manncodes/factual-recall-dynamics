@@ -1,0 +1,21 @@
+# SLURM configuration
+
+# Inherit from default config
+defaults:
+  - default
+
+# Override with SLURM-specific settings
+experiment:
+  name: slurm_experiment
+  output_dir: outputs/slurm
+
+# SLURM settings
+slurm:
+  partition: gpu
+  job_name: factual_recall
+  nodes: 1
+  ntasks_per_node: 1
+  cpus_per_task: 8
+  gpus_per_node: 1
+  time: 48:00:00
+  mem: 32G

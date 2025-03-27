@@ -1,0 +1,38 @@
+# Default configuration
+
+# Experiment settings
+experiment:
+  name: default_experiment
+  seed: 42
+  log_level: INFO
+  use_wandb: true
+  wandb_project: factual_recall_dynamics
+  output_dir: outputs/default
+
+# Data settings
+data:
+  num_personalities: 1000
+  num_test_personalities: 10
+  do_name_subword_tokenization: true
+  tokenization_type: shared_prefix_name  # or whole_prefix_name
+  data_dir: data
+  vocab_dir: vocab
+  n_epochs: 10
+  permute_individuals: true
+  permute_attributes: true
+
+# Model settings
+model:
+  is_finetuning: true
+  model_name: Qwen/Qwen2.5-0.5B
+  seq_length: 256
+  batch_size: 1
+  num_epochs: 10000
+  learning_rate: 5e-5
+  warmup_steps: 100
+  weight_decay: 0.01
+  adam_epsilon: 1e-6
+  scheduler: cosine
+  fp16: true
+  eval_ratio: 1.0
+  eval_batch_size: 2
